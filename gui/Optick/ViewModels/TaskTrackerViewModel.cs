@@ -397,8 +397,6 @@ namespace Profiler.ViewModels
 				Storages.Add(new NetworkStorage(storage.UploadURL, storage.DownloadURL));
 			}
 
-			Storages.Add(new GDriveStorage());
-
 			var targetStorage = Settings.GlobalSettings.Data.ActiveStorage;
 			if (!String.IsNullOrEmpty(targetStorage))
 			{

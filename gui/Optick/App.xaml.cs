@@ -3,7 +3,6 @@ using System.Windows;
 using System.Reflection;
 using System.IO;
 using System.Diagnostics;
-using Sentry;
 
 namespace Profiler
 {
@@ -41,15 +40,8 @@ namespace Profiler
 
 			while (rootException.InnerException != null)
 				rootException = rootException.InnerException;
-
-			if (MessageBox.Show("Unhandled Exception:\n" + rootException.ToString(), "Optick Crashed! Send report?", MessageBoxButton.OKCancel, MessageBoxImage.Error) == MessageBoxResult.OK)
-			{
-				using (SentrySdk.Init("https://52c8ab53c0cf47f28263fc211ebd4d38@sentry.io/1493349"))
-				{
-					SentrySdk.CaptureException(rootException);
-				}
-				return true;
-			}
+			
+			MessageBox.Show(rootException.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
 			return false;
 		}
 	}

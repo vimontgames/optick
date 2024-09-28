@@ -107,7 +107,7 @@
                                 FocusVisualStyle="{TemplateBinding FocusVisualStyle}"
                                 Foreground="{TemplateBinding Foreground}"
                                 SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
-                                Style="{TemplateBinding ToggleButtonStyle}">
+                                Style="{TemplateBinding ButtonStyle}">
                             <StackPanel HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
                                         Orientation="Horizontal">
